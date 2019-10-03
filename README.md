@@ -1,8 +1,8 @@
-# CloudManager: 
-Using Kubernetes to manage and monitor the developed and containerized vehicle tracking microservices on AWS
-
-## Motivation
-* Microservices architectures are very common for applications and many web giants such as Twitter, Amazon, PayPal and Netflix have successfully adopted microservice architecture. Some benefits like each service can scale and deployed independently, but inter-connection between microservices are hard to manage. If one service interrupted, checking the historical logs to find the root cause is very time-consuming. 
+# CloudManager - Using Kubernetes to manage and monitor the developed and containerized microservices on AWS
+## Overview
+CloudManager is an open source project that provides an intelligent way to help manage and monitor your developed and containerized microservices on AWS using Kubernetes. Kubernetes helps build, deliever and scale the contaierized microservices and monitoring system can help collect and track your kube status and logs. An example of vehicle tracking application with 6 services is used in this project to demonstrate the workflow. It includes:
+* 
+*
 
 ## Tech Stack
 Technologies used: Docker, Kubernetes, AWS(S3, EC2), Kops, Prometheus, Grafana, Helm
