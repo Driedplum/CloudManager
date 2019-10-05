@@ -10,7 +10,7 @@ CloudManager is an open source project that provides an intelligent way to help 
 
 Tech Stack
 Technologies used: Kubernetes, AWS(S3, EC2), Kops, Prometheus, Grafana, Helm ￼
-![alt text](https://user-images.githubusercontent.com/28720518/55841131-da1db700-5ae2-11e9-95e9-4c7ddb575ada.png)
+![alt text](img/TechStack.png)
 
 Tool Installation
 1. AWS Accounts with full access to: EC2, S3
