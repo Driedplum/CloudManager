@@ -8,10 +8,10 @@ CloudManager is an open source project that provides an intelligent way to help 
 * Delpoy k8s cluster on AWS via Kops
 * Build monitoring components by building logs pipline: pull logs from each container by fluentd, store logs by elasticsearch, and visualize by kibana
 
-Tech Stack
+## Tech Stack
 Technologies used: Kubernetes, AWS(S3, EC2), Kops, Prometheus, Grafana, Helm ￼
 ![alt text](img/TechStack.png)
 
-Tool Installation
+## Tool Installation
 1. AWS Accounts with full access to: EC2, S3
 2. Kops: https://github.com/kubernetes/kops
