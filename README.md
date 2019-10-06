@@ -13,11 +13,11 @@ Technologies used: Kubernetes, AWS(S3, EC2), Kops
 ![alt text](img/TechStack.png)
 
 ## Tool installation and setups
-### Launch AWS EC2 instance and connect EC2 instance in terminal
+#### Launch AWS EC2 instance and connect EC2 instance in terminal
 ```
 ssh -i <your_pem_key> ec2-user@<ip-address>
 ```
-### Kops and kubectl:  
+#### Kops and kubectl installation:  
 https://github.com/kubernetes/kops/blob/master/docs/aws.md
 - Setup AWS IAM user for Kops, which will require the following IAM permissions:
    ```
@@ -32,7 +32,7 @@ https://github.com/kubernetes/kops/blob/master/docs/aws.md
    aws configure           # Use your new access and secret key here
    aws iam list-users      # you should see a list of all your IAM users here
    ```
-### Create cluster in AWS S3 bucket
+#### Create cluster in AWS S3 bucket
 - Setup an AWS S3 bucket (distributed file system) for kops to store working data
 - Configure the cluster
 ```
@@ -43,9 +43,20 @@ kops create cluster --zones <your region> ${NAME}
 ```
 - Build the cluster(Warning: this will continue to charge you until you delete the cluster)\
   `kops update cluster ${NAME} --yes`\
-  To ensure the cluster is working, use\
-  `kops validate cluster`
-  Now I have EC2 instances and a load balancer. Load balancer can direct traffic to instances. It has a stable DNS name. For this project  `kubectl get all ` is calling the load balancer.
+  To ensure the cluster is working, using\
+  `kops validate cluster`\
+  To delete the cluster, using\
+  `kops delete cluster --name ${NAME} --yes`\
+Now I have EC2 instances and a load balancer. Load balancer can direct traffic to instances. It has a stable DNS name. For this project  `kubectl get all ` is calling the load balancer.
+
+#### Deploy k8s workloads(.yaml) to the cluster
+In the k8s_cluster folder, I created .yaml files of kubernetes pods and services for the vehicle tracking system. Please refer to Kubernetes API overviews for instruction: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#-strong-api-overview-strong- \
+Run all pods and services: `kubectl apply -f .`\
+Show all pods and services: `kubectl get all`\
+
+
+
+
 
  
 
