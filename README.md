@@ -13,11 +13,11 @@ Technologies used: Kubernetes, AWS(S3, EC2), Kops
 ![alt text](img/TechStack.png)
 
 ## Tool installation and setups
-### Launch AWS EC2 Instance and connect EC2 instance in terminal
+### Launch AWS EC2 instance and connect EC2 instance in terminal
 ```
 ssh -i <your_pem_key> ec2-user@<ip-address>
 ```
-### Kops and kubectl:\   
+### Kops and kubectl:  
 https://github.com/kubernetes/kops/blob/master/docs/aws.md
 - Setup AWS IAM user for Kops, which will require the following IAM permissions:
    ```
@@ -43,7 +43,8 @@ kops create cluster --zones <your region> ${NAME}
 ```
 - Build the cluster(Warning: this will continue to charge you until you delete the cluster)\
   `kops update cluster ${NAME} --yes`\
-  To ensure the cluster is working, use `kops validate cluster`\
+  To ensure the cluster is working, use\
+  `kops validate cluster`
   Now I have EC2 instances and a load balancer. Load balancer can direct traffic to instances. It has a stable DNS name. For this project  `kubectl get all ` is calling the load balancer.
 
  
