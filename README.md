@@ -9,13 +9,16 @@ CloudManager is an open source project that provides an intelligent way to help 
 * Build monitoring components by building logs pipline: pull logs from each container by fluentd, store logs by elasticsearch, and visualize by kibana
 
 ## Tech Stack
-Technologies used: Kubernetes, AWS(S3, EC2), Kops, Prometheus, Grafana, Helm ￼
+Technologies used: Kubernetes, AWS(S3, EC2), Kops
 ![alt text](img/TechStack.png)
 
-## Tool Installation
-1. AWS Accounts with full access to: EC2, S3
-2. Kops and kubectl: https://github.com/kubernetes/kops/blob/master/docs/aws.md
-   - Setup AWS IAM user for Kops, which will require the following IAM permissions:
+## Tool installation and setups
+### Launch AWS EC2 Instance and connect EC2 instance in terminal
+```
+ssh -i <your_pem_key> ec2-user@<ip-address>
+```
+### Kops and kubectl: https://github.com/kubernetes/kops/blob/master/docs/aws.md
+- Setup AWS IAM user for Kops, which will require the following IAM permissions:
    ```
    AmazonEC2FullAccess
    AmazonRoute53FullAccess
@@ -23,9 +26,23 @@ Technologies used: Kubernetes, AWS(S3, EC2), Kops, Prometheus, Grafana, Helm �
    IAMFullAccess
    AmazonVPCFullAccess
    ```
-   - configure the aws client to use your IAM user
+- configure the aws client to use your IAM user
    ```
    aws configure           # Use your new access and secret key here
    aws iam list-users      # you should see a list of all your IAM users here
    ```
+### Create cluster in AWS S3 bucket
+- Setup an AWS S3 bucket (distributed file system) for kops to store working data
+- Configure the cluster
+```
+export NAME=<name>.k8s.local
+export KOPS_STATE_STORE=s3://<s3 bucket name>
+aws ec2 describe-availability-zones --region <your region>
+kops create cluster --zones <your region> ${NAME}
+```
+- Build the cluster(Warning: this will continue to charge you until you delete the cluster)
+  `kops update cluster ${NAME} --yes`
+  To ensure the cluster is working, use `kops validate cluster`
+ 
+
 
