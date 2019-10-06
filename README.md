@@ -36,12 +36,12 @@ https://github.com/kubernetes/kops/blob/master/docs/aws.md
 #### Create cluster in AWS S3 bucket
 - Setup an AWS S3 bucket (distributed file system) for kops to store working data
 - Configure the cluster
-```
-export NAME=<name>.k8s.local
-export KOPS_STATE_STORE=s3://<s3 bucket name>
-aws ec2 describe-availability-zones --region <your region>
-kops create cluster --zones <your region> ${NAME}
-```
+  ```
+  export NAME=<name>.k8s.local
+  export KOPS_STATE_STORE=s3://<s3 bucket name>
+  aws ec2 describe-availability-zones --region <your region>
+  kops create cluster --zones <your region> ${NAME}
+  ```
 - Build the cluster(Warning: this will continue to charge you until you delete the cluster)\
   `kops update cluster ${NAME} --yes`\
   To ensure the cluster is working, using\
@@ -55,7 +55,12 @@ In the k8s_cluster folder, I created .yaml files of kubernetes pods and services
 Run all pods and services: `kubectl apply -f .`\
 Show all pods and services: `kubectl get all`\
 
-
+### Monitoring system: logging the cluster via ELK Stack using fluentd, elastic search, and kibana
+- Fluentd: pull logs from each container
+- Elasticsearc: store the logs
+- Kibana: visualization
+Pair the configurations into elastic-stack.yaml and fluentd-config.yaml from
+https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elasticsearch
 
 
 
