@@ -17,12 +17,12 @@ Technologies used: Kubernetes, AWS(S3, EC2), Kops, Prometheus, Grafana, Helm �
 2. Kops and kubectl: https://github.com/kubernetes/kops/blob/master/docs/aws.md
 * Setup AWS IAM user for Kops, which will require the following IAM permissions:
  `AmazonEC2FullAccess
-AmazonRoute53FullAccess
-AmazonS3FullAccess
-IAMFullAccess
-AmazonVPCFullAccess`
+  AmazonRoute53FullAccess
+  AmazonS3FullAccess
+  IAMFullAccess
+  AmazonVPCFullAccess`
   
 * configure the aws client to use your IAM user
- aws configure           # Use your new access and secret key here
-aws iam list-users      # you should see a list of all your IAM users here`
+ `aws configure           # Use your new access and secret key here
+  aws iam list-users      # you should see a list of all your IAM users here`
 
