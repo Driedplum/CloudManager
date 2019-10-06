@@ -1,4 +1,4 @@
-### CloudManager - Using Kubernetes to manage and monitor the developed and containerized microservices on AWS
+# CloudManager - Using Kubernetes to manage and monitor the developed and containerized microservices on AWS
 
 ## Overview
 CloudManager is an open source project that provides an intelligent way to help manage and monitor your developed and containerized microservices on AWS using Kubernetes. Kubernetes helps build, deliver and scale the contaierized microservices and monitoring system can help collect and track logs for each container. An example of vehicle tracking application with 6 services is used in this project to demonstrate the workflow. It includes:
