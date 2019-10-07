@@ -54,7 +54,7 @@ spec:
   #Type: ClusterIP(local), NodePort(external port), LoadBalancer(Cloud)
   type: ClusterIP
   
-  ---
+---
 apiVersion: v1
 kind: Service
 metadata:
