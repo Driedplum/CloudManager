@@ -53,9 +53,9 @@ Now I have EC2 instances and a load balancer. Load balancer can direct traffic t
 #### Deploy k8s workloads(.yaml) to the cluster
 In the k8s_cluster folder, I created .yaml files of kubernetes pods and services for the vehicle tracking system. Please refer to Kubernetes API overviews for instruction: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#-strong-api-overview-strong- \
 Run all pods and services: `kubectl apply -f .`\
-Show all pods and services: `kubectl get all`\
+Show all pods and services: `kubectl get all`
 
-### Monitoring system: logging the cluster via ELK Stack using fluentd, elastic search, and kibana
+### Monitoring system: building log pipeline via ELK Stack using fluentd, elastic search, and kibana
 - Fluentd: pull logs from each container
 - Elasticsearc: store the logs
 - Kibana: visualization
