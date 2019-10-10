@@ -64,8 +64,3 @@ Show all pods and services: `kubectl get all`
 Pair the configurations into elastic-stack.yaml and fluentd-config.yaml from
 https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elasticsearch
 
-
-
- 
-
-
