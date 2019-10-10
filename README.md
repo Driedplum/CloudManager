@@ -11,7 +11,7 @@ CloudManager is an open source project that provides an intelligent way to help 
 * Build monitoring components by building logging pipline: pull logs from each container by fluentd, store logs in elasticsearch, and visualize by kibana
 
 ## Tech Stack
-Technologies used: Kubernetes, AWS(S3, EC2), Kops
+Technologies used: Kubernetes, AWS(S3, EC2), Kops, Fluentd, Elasticsearch, Kibana
 ![alt text](img/TechStack.png)
 
 ## Tool installation and setups
