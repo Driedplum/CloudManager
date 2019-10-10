@@ -1,13 +1,14 @@
 # CloudManager - Using Kubernetes to manage and monitor the developed and containerized microservices on AWS
 
 ## Overview
-CloudManager is an open source project that provides an intelligent way to help manage and monitor your developed and containerized microservices on AWS using Kubernetes. Kubernetes helps build, deliver and scale the contaierized microservices and monitoring system can help collect and track logs for each container. An example of vehicle tracking application with 6 services is used in this project to demonstrate the workflow. It includes:
+CloudManager is an open source project that provides an intelligent way to help manage and monitor your developed and containerized microservices on AWS using Kubernetes. Kubernetes helps build, deliver and scale the contaierized microservices and monitoring components can help collect and track logs for each container. An example of vehicle tracking application with 6 services is used in this project to demonstrate the workflow. It includes:
 * Create K8s pods and services in .yaml files for six microservices that were already containerized in Docker Image
   * Checkout the docker hub: https://hub.docker.com/u/richardchesterwood
 * AWS setups: VPC, internet gateway, route tables, network subnets and security groups
 * AWS S3, EC2 instances setups
-* Delpoy k8s cluster on AWS via Kops
-* Build monitoring components by building logs pipline: pull logs from each container by fluentd, store logs by elasticsearch, and visualize by kibana
+  * S3 is a distributed file system in AWS, where Kops will use to store the working data
+* Delpoy k8s cluster on AWS via Kops from the command line
+* Build monitoring components by building logging pipline: pull logs from each container by fluentd, store logs in elasticsearch, and visualize by kibana
 
 ## Tech Stack
 Technologies used: Kubernetes, AWS(S3, EC2), Kops
