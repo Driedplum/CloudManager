@@ -56,7 +56,7 @@ In the k8s_cluster folder, I created .yaml files of kubernetes pods and services
 Run all pods and services: `kubectl apply -f .`\
 Show all pods and services: `kubectl get all`
 
-### Monitoring system: building log pipeline via ELK Stack using fluentd, elastic search, and kibana
+### Monitoring system: building log pipeline via ELK Stack using Fluentd, Elasticsearch, and Kibana
 - Fluentd: pull logs from each container
 - Elasticsearc: store the logs
 - Kibana: visualization
