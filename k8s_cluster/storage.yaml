@@ -1,4 +1,3 @@
-# What do I want?
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -10,8 +9,8 @@ spec:
   resources:
     requests:
       storage: 7Gi
+
 ---
-# How do we want it implemented
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
