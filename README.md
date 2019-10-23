@@ -56,11 +56,20 @@ In the k8s_cluster folder, I created .yaml files of kubernetes pods and services
 Run all pods and services: `kubectl apply -f .`\
 Show all pods and services: `kubectl get all`
 
-### Monitoring system: building log pipeline via ELK Stack using Fluentd, Elasticsearch, and Kibana
+## Monitoring system: building log pipeline via ELK Stack using Fluentd, Elasticsearch, and Kibana
+Kubernetes provide this add-on component to keep track of logs inside the containers within the kubernete cluster
 - Fluentd: pull logs from each container
 - Elasticsearc: store the logs
 - Kibana: visualization
 
 Pair the configurations into elastic-stack.yaml and fluentd-config.yaml from
 https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elasticsearch
+
+## Additional work
+Considering that the previous work involved a lot of environmental setups and configuaration, Terraform is a great Infrastructure-as-Code software tool to provision infrastructure. I used Terraform to setup my AWS environment, which can be re-used by me or anyone else in the future.
+
+## Future work
+For this project, kibana dashboard is built for monitoring the whole system. Considering adding notification for serious problem or repeatedly problem, alerting system will be implemented by using Prothemeus so that a more well-established monitoring system will be built for the application. The tech stack for future work is described below.
+![alt text](img/futurework.png)
+
 
