@@ -16,11 +16,3 @@ module "network" {
   source    = "network/"
   namespace = "${var.namespace}"
 }
-  
-#------------------------------------------------------------------------------
-# AWS_IAM
-#------------------------------------------------------------------------------
-module "IAM" {
-  source    = "IAM/"
-  namespace = "${var.namespace}"
-}
