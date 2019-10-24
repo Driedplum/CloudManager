@@ -14,8 +14,3 @@ variable "access_key" {
 
 variable "secret_key" {
     description = "AWS secret key"
-  
-variable "vpc_cidr_block" {
-    description = "AWS VPC CIDR Block to use"
-    default = "10.0.0.0/16"
-}
