@@ -20,7 +20,7 @@ Technologies used: Kubernetes, AWS(S3, EC2), Kops, Fluentd, Elasticsearch, Kiban
 ssh -i <your_pem_key> ec2-user@<ip-address>
 ```
 #### Kops and kubectl installation:  
-https://github.com/kubernetes/kops/blob/master/docs/aws.md
+https://github.com/kubernetes/kops/tree/master/docs
 - Setup AWS IAM user for Kops, which will require the following IAM permissions:
    ```
    AmazonEC2FullAccess
